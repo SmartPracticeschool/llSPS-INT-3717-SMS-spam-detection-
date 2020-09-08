@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>NLP internship project</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap" rel="stylesheet">
+<style>
+ body {
+      background-image: url("https://th.bing.com/th/id/OIP.RYdJg17acTEv8B-4Hc0P1QHaHa?w=172&h=180&c=7&o=5&dpr=1.12&pid=1.7");
+      background-color: #333;
+    }
+    
+
+.login{
+top: 20%;
+color: #e31009; 
+letter-spacing:1px; 
+text-align:center;
+
+}
+.tab{
+position:absolute;left:580px;
+
+}
+.ne h1{
+font-family: 'Londrina Solid', cursive;
+color: #fff; text-shadow: 0 7 10px rgba(0,0,5,0.3);
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+<div class="ne">
+
+ 
+<h1> <span class="tab">     Spam Message Detection</span> </h1>
+</div>
+
+ <div class="login">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+	<h3>Spam or Ham</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('y_pred')}}"method="post">
+
+		<input type="text" name="Message" placeholder="Message" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Result</button>
+
+    </form>
+
+   <br>
+   <br>
+<div style="border: 3px solid white" text>  <p id=i76 style="color: #fff"> {{ prediction_text }} </p> </div>
+
+ </div>
+
+
+
+</body>
+
+</html>
